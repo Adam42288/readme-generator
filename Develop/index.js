@@ -81,6 +81,7 @@ function createReadMe(answers){
     
 return`# ${answers.title}  
 ${badge}
+## Description
 ${answers.description}
 ## Table of Contents:
 * [Installation](#installation)
