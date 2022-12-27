@@ -11,7 +11,43 @@ const questions = [
         name: "description",
         message: "Enter a description of your project",
         type: "input",
-    }
+    },
+    {
+        name: "installation",
+        message: "Enter the installation instructions for your project",
+        type: "input",
+    },
+    {
+        name: "usage",
+        message: "Enter the usage guidelines for your project",
+        type: "input",
+    },
+    {
+        name: "contribution",
+        message: "Enter the contribution guidelines for your project",
+        type: "input",
+    },
+    {
+        name: "tests",
+        message: "Enter the test instructions for your project",
+        type: "input",
+    },
+    {
+        name: "license",
+        type: "list",
+        message: "Choose a license for your project",
+        choices: ['MIT', 'Mozilla', 'Open Software License 3.0', 'ISC'],
+    },
+    {
+        name: "username",
+        message: "Enter your Github username",
+        type: "input",
+    },
+    {
+        name: "email",
+        message: "Enter your email",
+        type: "input",
+    },
 ];
 
 inquirer.prompt(questions)
