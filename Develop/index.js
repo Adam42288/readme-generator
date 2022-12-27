@@ -14,7 +14,11 @@ const questions = [
     }
 ];
 
-inquirer.createPromptModule(question);
+inquirer.prompt(questions)
+    .then(function (answer) {
+    console.log(answer.title);
+    console.log(answer.description);
+});
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
