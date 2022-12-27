@@ -61,19 +61,19 @@ const questions = [
 function createReadMe(answers){
  
     let badge = "";
-    if(answers.license == "MIT"){
+    if(answers.license == "MIT License"){
         badge = "![License](https://img.shields.io/static/v1?label=License&message=MIT&color=blue&style=plastic)"
-    } else if (answers.license == "AGPLv3") {
+    } else if (answers.license == "GNU AGPLv3") {
         badge = "![License](https://img.shields.io/static/v1?label=License&message=AGPLv3&color=blue&style=plastic)"
     } else if (answers.license == "Boost Software License 1.0") {
         badge = "![License](https://img.shields.io/static/v1?label=License&message=BOOSTv1&color=blue&style=plastic)"
-    } else if (answers.license == "LGPLv3") {
+    } else if (answers.license == "GNU LGPLv3") {
         badge = "![License](https://img.shields.io/static/v1?label=License&message=LGPLv3&color=blue&style=plastic)"
     } else if (answers.license == "Mozilla Public License 2.0") {
         badge = "![License](https://img.shields.io/static/v1?label=License&message=MOZILLAv2&color=blue&style=plastic)"
-    } else if (answers.license == "APACHE 2.0"){
+    } else if (answers.license == "Apache License 2.0"){
         badge = "![License](https://img.shields.io/static/v1?label=License&message=APACHE2.0&color=blue&style=plastic)"
-    } else if (answers.license == "GPL 3.0"){
+    } else if (answers.license == "GNU GPLv3"){
         badge = "![License](https://img.shields.io/static/v1?label=License&message=GPL3.0&color=blue&style=plastic)"
     } else if (answers.license == "BSD 3"){
         badge = "![License](https://img.shields.io/static/v1?label=License&message=BSD3&color=blue&style=plastic)"
@@ -90,7 +90,7 @@ ${answers.description}
 * [Tests](#tests)
 * [Questions](#questions)
 ### Installation:
-In order to install the necessary dependencies, open the console and run the following:
+This project uses the following dependencies:
 \`\`\`${answers.installations}\`\`\`
 ### Usage:
 ${answers.usage}
@@ -103,24 +103,15 @@ ${answers.contribution}
 In order to test open the console and run the following:
 \`\`\`${answers.tests}\`\`\`
 ### Questions:
-If you have any questions contact me on [GitHub](https://github.com/${answers.username}) or contact 
+If you have any questions contact me on [GitHub](https://github.com/${answers.username}) or email 
 me at ${answers.email}  
  `
 }
 
 inquirer.prompt(questions)
-.then((answers) => writeToFile('createReadMe.md', createReadMe(answers)))
-    .then(() => console.log('Successfully wrote to index.html'))
+.then((answers) => writeToFile('createdReadMe.md', createReadMe(answers)))
+    .then(() => console.log('Successfully generated ReadMe'))
     .catch((err) => console.error(err));
-
-// writeToFile(fileName, answers) {
-//     fs.writeFile(fileName, answers, err => {
-//         if (err) {
-//             return console.log(err);
-//         }
-//         console.log("Success!")
-//     });
-// }
 
 // TODO: Create a function to initialize app
 function init() {}
